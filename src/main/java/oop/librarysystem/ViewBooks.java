@@ -1,4 +1,4 @@
-package oop.librarysystem.Controllers;
+package oop.librarysystem;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
