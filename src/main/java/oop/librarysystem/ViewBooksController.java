@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class ViewBooks {
+public class ViewBooksController {
     @FXML
     public TableView books;
     public TableColumn bookName;
