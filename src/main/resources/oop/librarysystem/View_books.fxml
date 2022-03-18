@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.Controllers.ViewBooks">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="oop.librarysystem.Controllers.ViewBooks"
+            >
+
     <children>
-        <MenuBar prefHeight="23.0" prefWidth="464.0">
+        <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
@@ -30,13 +31,14 @@
                 </Menu>
             </menus>
         </MenuBar>
-      <TableView layoutX="14.0" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
-        <columns>
-          <TableColumn fx:id="bookName" prefWidth="301.0" text="Name" />
-          <TableColumn fx:id="bookType" minWidth="0.0" prefWidth="198.0" text="Type" />
-            <TableColumn fx:id="bookAuthor" prefWidth="148.0" text="Author" />
-            <TableColumn fx:id="bookYear" prefWidth="129.0" text="Year" />
-        </columns>
-      </TableView>
     </children>
+
+    <TableView fx:id="books" layoutX="14.0" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
+      <columns>
+          <TableColumn fx:id="bookName" prefWidth="301.0" text="Name"/>
+          <TableColumn fx:id="bookType" minWidth="0.0" prefWidth="198.0" text="Type"/>
+          <TableColumn fx:id="bookAuthor" prefWidth="148.0" text="Author"/>
+          <TableColumn fx:id="bookYear" prefWidth="129.0" text="Year"/>
+      </columns>
+    </TableView>
 </AnchorPane>
