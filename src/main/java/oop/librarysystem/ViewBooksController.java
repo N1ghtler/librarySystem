@@ -45,7 +45,7 @@ public class ViewBooksController implements Initializable {
         bookAuthor.setCellFactory(new PropertyValueFactory("Author"));
         bookYear.setCellFactory(new PropertyValueFactory("Year"));
 
-        //ooks.setItems(data);
+        //books.setItems(data);
     }
 
 
