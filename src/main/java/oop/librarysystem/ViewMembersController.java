@@ -12,7 +12,7 @@ import oop.librarysystem.DataClass.Member;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewBooksController implements Initializable {
+public class ViewMembersController implements Initializable {
     @FXML
     public TableView<Member> books = new TableView<Member>();
     @FXML
@@ -23,6 +23,7 @@ public class ViewBooksController implements Initializable {
     public TableColumn<Member,String> bookAuthor = new TableColumn<Member,String>();
     @FXML
     public TableColumn<Member,String> bookYear = new TableColumn<Member,String>();
+
 
 
 
@@ -46,7 +47,18 @@ public class ViewBooksController implements Initializable {
         bookAuthor.setCellFactory(new PropertyValueFactory("Author"));
         bookYear.setCellFactory(new PropertyValueFactory("Year"));
 
-        books.setItems(data);
+        books.getColumns().addAll(
+               bookName,bookType,bookAuthor,bookYear
+        );
+
+        books.getItems().addAll(
+                new Member("DDAs","asd1231as","sa234ds","A221"),
+                new Member("DDAs","sa2","sad53s","A2e1"),
+                new Member("DDAs","a32sqq425das","sa23ds","A2d1"),
+                new Member("DDAs","asd235as","sa5235ds","A2as21"),
+                new Member("DDAs","as235das","sss252ads","A2xa1"));
+
+        books.getItems().addAll(data);
     }
 
 

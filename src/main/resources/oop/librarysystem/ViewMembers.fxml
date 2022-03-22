@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="oop.librarysystem.ViewBooksController">
+            fx:controller="oop.librarysystem.ViewMembersController">
     <children>
         <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
