@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddmemberSystem.Addmember">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField prefHeight="54.0" prefWidth="600.0" promptText="Member Name">
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="600.0" promptText="Member Age">
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField layoutX="10.0" layoutY="64.0" prefHeight="54.0" prefWidth="600.0" promptText="Member ID">
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField layoutX="10.0" layoutY="64.0" prefHeight="54.0" prefWidth="600.0" promptText="Member Gender">
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+            </TextField>
+            <HBox prefHeight="54.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="307.0" text="Save" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="318.0" text="Cancel" />
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>
