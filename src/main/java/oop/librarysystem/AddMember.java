@@ -2,18 +2,15 @@ package oop.librarysystem;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import javafx.scene.control.TextField;
-import oop.librarysystem.DataClass.Member;
 
 public class AddMember implements Initializable {
 

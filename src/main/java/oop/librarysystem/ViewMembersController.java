@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import oop.librarysystem.DataClass.Member;
+import oop.librarysystem.DataClass.ViewMember;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,30 +15,35 @@ import java.util.ResourceBundle;
 public class ViewMembersController implements Initializable {
 
     @FXML
-    public TableView<Member>  memberTable;
-    public TableColumn<Member,String> memberName;
-    public TableColumn<Member,String> memberGender;
-    public TableColumn<Member,String> memberID;
-    public TableColumn<Member,String> memberAge;
+    public TableView<ViewMember>  memberTable;
+    @FXML
+    public TableColumn<ViewMember,String> memberName;
+    @FXML
+    public TableColumn<ViewMember,String> memberGender;
+    @FXML
+    public TableColumn<ViewMember,String> memberID;
+    @FXML
+    public TableColumn<ViewMember,String> memberAge;
+
+    ObservableList<ViewMember> data = FXCollections.observableArrayList(
+            new ViewMember("DDAs","20","M","A221"),
+            new ViewMember("DDAs","32","M","A2e1"),
+            new ViewMember("DDAs","32","F","A2d1"),
+            new ViewMember("DDAs","41","F","A2as21"),
+            new ViewMember("DDAs","54","F","A2xa1")
+    );
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        ObservableList<Member> data = FXCollections.observableArrayList(
-            new Member("DDAs","20","sa234ds","A221"),
-            new Member("DDAs","32","sad53s","A2e1"),
-            new Member("DDAs","32","sa23ds","A2d1"),
-            new Member("DDAs","41","sa5235ds","A2as21"),
-            new Member("DDAs","54","sss252ads","A2xa1")
-        );
 
         memberName.setCellFactory(new PropertyValueFactory("Name"));
         memberAge.setCellFactory(new PropertyValueFactory("Age"));
         memberGender.setCellFactory(new PropertyValueFactory("Gender"));
         memberID.setCellFactory(new PropertyValueFactory("ID"));
 
-        //memberTable.getItems(data);
+        memberTable.setItems(data);
     }
+
 
 
 
