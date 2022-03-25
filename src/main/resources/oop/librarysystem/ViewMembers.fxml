@@ -26,7 +26,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TableView layoutX="14.0" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
+        <TableView fx:id="memberTable" layoutX="14.0" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
             <columns>
                 <TableColumn fx:id="memberName" prefWidth="301.0" text="Name" />
                 <TableColumn fx:id="memberAge" minWidth="0.0" prefWidth="198.0" text="Age" />

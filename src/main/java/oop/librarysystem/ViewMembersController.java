@@ -13,52 +13,31 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ViewMembersController implements Initializable {
+
     @FXML
-    public TableView<Member> books = new TableView<Member>();
-    @FXML
-    public TableColumn<Member,String> bookName = new TableColumn<Member,String>();
-    @FXML
-    public TableColumn<Member,String> bookType = new TableColumn<Member,String>();
-    @FXML
-    public TableColumn<Member,String> bookAuthor = new TableColumn<Member,String>();
-    @FXML
-    public TableColumn<Member,String> bookYear = new TableColumn<Member,String>();
-
-
-
-
-
-
-
+    public TableView<Member>  memberTable;
+    public TableColumn<Member,String> memberName;
+    public TableColumn<Member,String> memberGender;
+    public TableColumn<Member,String> memberID;
+    public TableColumn<Member,String> memberAge;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         ObservableList<Member> data = FXCollections.observableArrayList(
-            new Member("DDAs","asd1231as","sa234ds","A221"),
-            new Member("DDAs","sa2","sad53s","A2e1"),
-            new Member("DDAs","a32sqq425das","sa23ds","A2d1"),
-            new Member("DDAs","asd235as","sa5235ds","A2as21"),
-            new Member("DDAs","as235das","sss252ads","A2xa1")
+            new Member("DDAs","20","sa234ds","A221"),
+            new Member("DDAs","32","sad53s","A2e1"),
+            new Member("DDAs","32","sa23ds","A2d1"),
+            new Member("DDAs","41","sa5235ds","A2as21"),
+            new Member("DDAs","54","sss252ads","A2xa1")
         );
 
-        bookName.setCellFactory(new PropertyValueFactory("Tile"));
-        bookType.setCellFactory(new PropertyValueFactory("Type"));
-        bookAuthor.setCellFactory(new PropertyValueFactory("Author"));
-        bookYear.setCellFactory(new PropertyValueFactory("Year"));
+        memberName.setCellFactory(new PropertyValueFactory("Name"));
+        memberAge.setCellFactory(new PropertyValueFactory("Age"));
+        memberGender.setCellFactory(new PropertyValueFactory("Gender"));
+        memberID.setCellFactory(new PropertyValueFactory("ID"));
 
-        books.getColumns().addAll(
-               bookName,bookType,bookAuthor,bookYear
-        );
-
-        books.getItems().addAll(
-                new Member("DDAs","asd1231as","sa234ds","A221"),
-                new Member("DDAs","sa2","sad53s","A2e1"),
-                new Member("DDAs","a32sqq425das","sa23ds","A2d1"),
-                new Member("DDAs","asd235as","sa5235ds","A2as21"),
-                new Member("DDAs","as235das","sss252ads","A2xa1"));
-
-        books.getItems().addAll(data);
+        //memberTable.getItems(data);
     }
 
 
