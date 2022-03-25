@@ -2,17 +2,29 @@ package oop.librarysystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import oop.librarysystem.DataClass.ViewMember;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ViewMembersController implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
 
     @FXML
     public TableView<ViewMember>  memberTable;
@@ -41,9 +53,17 @@ public class ViewMembersController implements Initializable {
         memberGender.setCellFactory(new PropertyValueFactory("Gender"));
         memberID.setCellFactory(new PropertyValueFactory("ID"));
 
-        memberTable.setItems(data);
+        //memberTable.setItems(data);
     }
 
+    @FXML
+    public void Addmember(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("src/main/resources/oop/librarysystem/addmember.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 
