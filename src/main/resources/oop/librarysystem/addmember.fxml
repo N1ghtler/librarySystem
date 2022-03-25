@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Files">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Member">
+               <items>
+                  <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book">
+               <items>
+                  <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <VBox layoutX="14.0" layoutY="68.0" prefHeight="418.0" prefWidth="986.0" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+         <children>
+            <TextField fx:id="Mname" layoutX="10.0" layoutY="10.0" prefHeight="80.0" prefWidth="986.0" text="Member_Name" />
+            <TextField fx:id="Mage" layoutX="10.0" layoutY="89.0" prefHeight="79.0" prefWidth="1000.0" text="Member_Age" />
+            <TextField fx:id="Mid" layoutX="10.0" layoutY="168.0" prefHeight="79.0" prefWidth="1000.0" text="Member_ID" />
+            <TextField fx:id="Mgender" layoutX="10.0" layoutY="168.0" prefHeight="79.0" prefWidth="1000.0" text="Gender" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="save_button" mnemonicParsing="false" onAction="#saveMember" prefHeight="82.0" prefWidth="501.0" text="Save " />
+                  <Button fx:id="cancel_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="490.0" text="Cancel " />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
