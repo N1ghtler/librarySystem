@@ -26,12 +26,12 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TableView layoutX="105.0" layoutY="25.0" prefHeight="560.0" prefWidth="970.0">
+        <TableView fx:id="memberTable" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
             <columns>
-                <TableColumn fx:id="bookName" prefWidth="301.0" text="Name" />
-                <TableColumn fx:id="bookType" minWidth="0.0" prefWidth="198.0" text="Type" />
-                <TableColumn fx:id="bookAuthor" prefWidth="148.0" text="Author" />
-                <TableColumn fx:id="bookYear" prefWidth="129.0" text="Year" />
+                <TableColumn fx:id="memberName" prefWidth="301.0" text="Name" />
+                <TableColumn fx:id="memberAge" minWidth="0.0" prefWidth="198.0" text="Age" />
+                <TableColumn fx:id="memberGender" prefWidth="148.0" text="Gender" />
+                <TableColumn fx:id="memberID" prefWidth="129.0" text="ID" />
             </columns>
         </TableView>
     </children>
