@@ -1,13 +1,13 @@
-package oop.librarysystem.DataClass;
+package oop.librarysystem;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class ViewMember {
-    private StringProperty Name;
-    private StringProperty Age;
-    private StringProperty Gender;
-    private StringProperty ID;
+    private SimpleStringProperty Name;
+    private SimpleStringProperty Age;
+    private SimpleStringProperty Gender;
+    private SimpleStringProperty ID;
 
     public ViewMember(){}
     public ViewMember(String Name,String Age,String Gender,String ID){
