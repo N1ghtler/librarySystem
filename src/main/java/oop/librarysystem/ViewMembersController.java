@@ -41,7 +41,7 @@ public class ViewMembersController implements Initializable {
     ObservableList<ViewMember> data = FXCollections.observableArrayList();
     ArrayList<ViewMember> list = new ArrayList<>();
 
-    private void addData(){
+    private void addData(ArrayList<ViewMember> list){
         list.add(new ViewMember("DDAs","20","M","A221"));
         list.add(new ViewMember("DDAds","210","M","A231"));
         list.add(new ViewMember("DDafAs","202","F","A421"));
@@ -53,13 +53,13 @@ public class ViewMembersController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //addData();
+
         memberName.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Name"));
         memberGender.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Gender"));
         memberID.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("ID"));
         memberAge.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Age"));
-
-        //memberTable.setItems(data);
+        addData(list);
+        memberTable.setItems(data);
     }
 
 //    @FXML
