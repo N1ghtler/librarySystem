@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="oop.librarysystem.ViewBookController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <TableView fx:id="tableview" layoutX="39.0" layoutY="43.0" prefHeight="314.0" prefWidth="526.0">
+         <columns>
+            <TableColumn fx:id="colTitle" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="colAuthor" prefWidth="75.0" text="Author" />
+            <TableColumn fx:id="colIsbn" prefWidth="75.0" text="ISBN" />
+            <TableColumn fx:id="colYear" prefWidth="75.0" text="Publish Year" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
