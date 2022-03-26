@@ -1,4 +1,4 @@
-package oop.librarysystem.DataClass;
+package oop.librarysystem;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
