@@ -68,6 +68,4 @@ public class ViewMembersController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
 }
