@@ -5,6 +5,27 @@
 
 <AnchorPane fx:controller="oop.librarysystem.ViewBookController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Files">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Member">
+               <items>
+                  <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book">
+               <items>
+                  <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
       <TableView fx:id="tableview" layoutX="39.0" layoutY="43.0" prefHeight="314.0" prefWidth="526.0">
          <columns>
             <TableColumn fx:id="colTitle" prefWidth="75.0" text="Title" />
