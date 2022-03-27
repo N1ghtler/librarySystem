@@ -1,7 +1,7 @@
 package oop.librarysystem.DataClass;
 
 public class Member {
-    private  String Name,Age,Gender,ID;
+    public   String Name,Age,Gender,ID;
     public Member(String name, String age, String gender, String iD) {
         Name = name;
         Age = age;

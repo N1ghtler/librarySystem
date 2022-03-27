@@ -2,82 +2,70 @@ package oop.librarysystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import oop.librarysystem.DataClass.Member;
-
+import javafx.stage.Stage;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ViewMembersController implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+
     @FXML
-    public TableView<Member> books = new TableView<Member>();
+    public TableView<ViewMember>  memberTable;
     @FXML
-    public TableColumn<Member,String> bookName = new TableColumn<Member,String>();
+    public TableColumn<ViewMember, String> memberName;
     @FXML
-    public TableColumn<Member,String> bookType = new TableColumn<Member,String>();
+    public TableColumn<ViewMember, String> memberGender;
     @FXML
-    public TableColumn<Member,String> bookAuthor = new TableColumn<Member,String>();
+    public TableColumn<ViewMember, String> memberID;
     @FXML
-    public TableColumn<Member,String> bookYear = new TableColumn<Member,String>();
+    public TableColumn<ViewMember, String> memberAge;
 
+    ObservableList<ViewMember> data = FXCollections.observableArrayList();
+    ArrayList<ViewMember> list = new ArrayList<>();
 
-
-
-
-
-
+    public void addData(){
+        list.add(new ViewMember("DDAs","20","M","A221"));
+        list.add(new ViewMember("DDAds","210","M","A231"));
+        list.add(new ViewMember("DDafAs","202","F","A421"));
+        list.add(new ViewMember("DDAdfs","201","F","A521"));
+        list.add(new ViewMember("DDdfAs","210","M","A621"));
+        list.add(new ViewMember("DDadAs","22","M","A71"));
+        data.addAll(list);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ObservableList<Member> data = FXCollections.observableArrayList(
-            new Member("DDAs","asd1231as","sa234ds","A221"),
-            new Member("DDAs","sa2","sad53s","A2e1"),
-            new Member("DDAs","a32sqq425das","sa23ds","A2d1"),
-            new Member("DDAs","asd235as","sa5235ds","A2as21"),
-            new Member("DDAs","as235das","sss252ads","A2xa1")
-        );
-
-        bookName.setCellFactory(new PropertyValueFactory("Tile"));
-        bookType.setCellFactory(new PropertyValueFactory("Type"));
-        bookAuthor.setCellFactory(new PropertyValueFactory("Author"));
-        bookYear.setCellFactory(new PropertyValueFactory("Year"));
-
-        books.getColumns().addAll(
-               bookName,bookType,bookAuthor,bookYear
-        );
-
-        books.getItems().addAll(
-                new Member("DDAs","asd1231as","sa234ds","A221"),
-                new Member("DDAs","sa2","sad53s","A2e1"),
-                new Member("DDAs","a32sqq425das","sa23ds","A2d1"),
-                new Member("DDAs","asd235as","sa5235ds","A2as21"),
-                new Member("DDAs","as235das","sss252ads","A2xa1"));
-
-        books.getItems().addAll(data);
+        memberName.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Name"));
+        memberGender.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Gender"));
+        memberID.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("ID"));
+        memberAge.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Age"));
+        addData();
+        memberTable.setItems(data);
     }
 
-
-
-
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//
-//        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-//        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
-//        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
-//        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
-//        //add your data to the table here.
-//        tbData.setItems(studentsModels);
-//    }
-//
-//    // add your data here from any source
-//    private ObservableList<StudentsModel> studentsModels = FXCollections.observableArrayList(
-//            new StudentsModel(1,"Amos", "Chepchieng"),
-//            new StudentsModel(2,"Keep", "Too"),
-//            );
+    @FXML
+    public void Addmember(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource(""));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
