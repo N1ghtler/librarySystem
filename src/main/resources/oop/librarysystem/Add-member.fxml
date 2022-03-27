@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+    <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Files">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Quit" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Member">
+                <items>
+                    <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                    <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book">
+                <items>
+                    <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                    <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+      <VBox layoutX="14.0" layoutY="41.0" prefHeight="559.0" prefWidth="951.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+         <children>
+            <Label fx:id="welcome" prefHeight="50.0" prefWidth="984.0" text="                                                                                   Add member" textFill="#c72003">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <TextField fx:id="Mname" prefHeight="76.0" prefWidth="951.0" />
+            <TextField fx:id="Mid" layoutX="10.0" layoutY="60.0" prefHeight="76.0" prefWidth="951.0" />
+            <TextField fx:id="Mage" layoutX="10.0" layoutY="60.0" prefHeight="76.0" prefWidth="951.0" />
+            <TextField fx:id="Mgender" layoutX="10.0" layoutY="212.0" prefHeight="76.0" prefWidth="951.0" />
+            <HBox prefHeight="90.0" prefWidth="951.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="477.0" text="Save" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="476.0" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+</children>
+</AnchorPane>
