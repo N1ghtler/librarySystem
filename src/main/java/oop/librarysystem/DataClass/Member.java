@@ -1,42 +1,64 @@
 package oop.librarysystem.DataClass;
 
-public class Member {
-    public   String Name,Age,Gender,ID;
-    public Member(String name, String age, String gender, String iD) {
-        Name = name;
-        Age = age;
-        Gender = gender;
-        ID = iD;
+public class Member{
+
+    private String Name;
+    private int Age;
+    private String ID;
+    private String gender;
+
+    public Member() {
+
     }
-    public Member(){}
-    public String getName() {
+
+    public Member(String Name, int Age , String ID) {
+        this.Name = Name;
+        this.Age = Age;
+        this.ID = ID;
+    }
+
+    public Member(String Name, int Age, String ID, String gender) {
+        this.Name = Name;
+        this.Age= Age;
+        this.ID = ID;
+        this.gender= gender;
+    }
+
+    public void setMemberName(String name) {
+        this.Name = name;
+    }
+
+    public void setMemberAge(int Age) {
+        this.Age = Age;
+    }
+
+    public void setMemberID(String id) {
+        this.ID = id;
+    }
+
+    public void setMemberGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getMemberName() {
         return Name;
     }
-    public void setName(String name) {
-        Name = name;
-    }
-    public String getAge() {
+
+    public int getMemberAge() {
         return Age;
     }
-    public void setAge(String age) {
-        Age = age;
-    }
-    public String getGender() {
-        return Gender;
-    }
-    public void setGender(String gender) {
-        Gender = gender;
-    }
-    public String getID() {
+
+    public String getMemberID() {
         return ID;
     }
-    public void setID(String iD) {
-        ID = iD;
+
+    public String getMemberGender() {
+        return gender;
     }
-    
+
     @Override
     public String toString() {
-        return "Member [Age=" + Age + ", Gender=" + Gender + ", ID=" + ID + ", Name=" + Name + "]";
+        return "Member [Age=" + Age + ", Gender=" + gender + ", ID=" + ID + ", Name=" + Name + "]";
     }
 
 }

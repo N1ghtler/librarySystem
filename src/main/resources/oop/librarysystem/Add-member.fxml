@@ -34,31 +34,28 @@
       </Label>
       <VBox fx:id="" layoutX="320.0" layoutY="96.0" prefHeight="508.0" prefWidth="683.0">
          <children>
-            <TextField fx:id="Mname" prefHeight="70.0" prefWidth="658.0" />
-            <TextField fx:id="Mid" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="664.0" />
-            <TextField fx:id="Mage" layoutX="10.0" layoutY="80.0" prefHeight="69.0" prefWidth="683.0" />
-            <TextField fx:id="Mgender" layoutX="10.0" layoutY="149.0" prefHeight="69.0" prefWidth="683.0" />
+            <TextField fx:id="Mname" prefHeight="121.0" prefWidth="683.0" />
+            <TextField fx:id="Mid" layoutX="10.0" layoutY="10.0" prefHeight="124.0" prefWidth="683.0" />
+            <TextField fx:id="Mage" layoutX="10.0" layoutY="80.0" prefHeight="127.0" prefWidth="683.0" />
+            <TextField fx:id="Mgender" layoutX="10.0" layoutY="149.0" prefHeight="124.0" prefWidth="683.0" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#Savebutton" prefHeight="99.0" prefWidth="340.0" text="Save" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Cancelbutton" prefHeight="99.0" prefWidth="341.0" text="Cancel" />
+                  <Button fx:id="Save_B" mnemonicParsing="false" onAction="#Savebutton" prefHeight="78.0" prefWidth="340.0" text="Save" />
+                  <Button fx:id="Cancel_B" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Cancelbutton" prefHeight="99.0" prefWidth="341.0" text="Cancel" />
                </children>
             </HBox>
-            <Label fx:id="welcome" prefHeight="126.0" prefWidth="682.0">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
+            <TextArea fx:id="information" prefHeight="226.0" prefWidth="323.0" />
          </children>
       </VBox>
       <Pane layoutX="16.0" layoutY="96.0" prefHeight="508.0" prefWidth="306.0">
          <children>
             <VBox layoutX="1.0" prefHeight="508.0" prefWidth="306.0">
                <children>
-                  <Label fx:id="Label_name" prefHeight="69.0" prefWidth="306.0" text="                   Member_Name " textFill="#fc7c04">
+                  <Label fx:id="Label_name" prefHeight="60.0" prefWidth="306.0" text="                   Member_Name " textFill="#fc7c04">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="Label_id" layoutX="10.0" layoutY="10.0" prefHeight="69.0" prefWidth="306.0" text="                   Member_id" textFill="#ff9317">
+                  <Label fx:id="Label_id" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="306.0" text="                   Member_id" textFill="#ff9317">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
