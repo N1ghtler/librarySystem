@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.AddmemberController">
+    <children>
+        <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Files">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Member">
+                    <items>
+                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Book">
+                    <items>
+                        <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <Label layoutX="14.0" layoutY="40.0" prefHeight="56.0" prefWidth="986.0" text="                                                                                                                     Add Member" textFill="#347143">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <VBox fx:id="" layoutX="320.0" layoutY="96.0" prefHeight="508.0" prefWidth="683.0">
+         <children>
+            <TextField fx:id="Mname" prefHeight="121.0" prefWidth="683.0" />
+            <TextField fx:id="Mid" layoutX="10.0" layoutY="10.0" prefHeight="124.0" prefWidth="683.0" />
+            <TextField fx:id="Mage" layoutX="10.0" layoutY="80.0" prefHeight="127.0" prefWidth="683.0" />
+            <TextField fx:id="Mgender" layoutX="10.0" layoutY="149.0" prefHeight="124.0" prefWidth="683.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="Save_B" mnemonicParsing="false" onAction="#Savebutton" prefHeight="78.0" prefWidth="340.0" text="Save" />
+                  <Button fx:id="Cancel_B" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Cancelbutton" prefHeight="99.0" prefWidth="341.0" text="Cancel" />
+               </children>
+            </HBox>
+            <TextArea fx:id="information" prefHeight="226.0" prefWidth="323.0" />
+         </children>
+      </VBox>
+      <Pane layoutX="16.0" layoutY="96.0" prefHeight="508.0" prefWidth="306.0">
+         <children>
+            <VBox layoutX="1.0" prefHeight="508.0" prefWidth="306.0">
+               <children>
+                  <Label fx:id="Label_name" prefHeight="60.0" prefWidth="306.0" text="                   Member_Name " textFill="#fc7c04">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="Label_id" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="306.0" text="                   Member_id" textFill="#ff9317">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="Label_age" layoutX="10.0" layoutY="80.0" prefHeight="69.0" prefWidth="306.0" text="                  Member_age" textFill="#ff7700">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="Label_gender" layoutX="10.0" layoutY="149.0" prefHeight="69.0" prefWidth="306.0" text="                  Member_gender" textFill="#fa8824">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+    </children>
+
+</AnchorPane>
