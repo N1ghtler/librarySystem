@@ -61,7 +61,7 @@ public class ViewMembersController implements Initializable {
     }
 
     @FXML
-    public void Addmember(ActionEvent event) throws IOException {
+    public void viewBook(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource(""));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

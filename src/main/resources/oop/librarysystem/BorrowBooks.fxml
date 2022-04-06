@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.BorrowBooks">
+    <MenuBar prefHeight="23.0" prefWidth="464.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Files">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Quit" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Member">
+                <items>
+                    <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                    <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book">
+                <items>
+                    <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                    <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Borrow Books">
+                <items>
+                    <MenuItem id="addBorrowBook" mnemonicParsing="false" text="Add Borrow Books" />
+                    <MenuItem id="viewBorrowBook" mnemonicParsing="false" text="View Borrow Books" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+   <TableView layoutX="20.0" layoutY="42.0" prefHeight="527.0" prefWidth="902.0">
+     <columns>
+       <TableColumn prefWidth="123.0" text="C1" />
+       <TableColumn prefWidth="154.0" text="C2" />
+         <TableColumn prefWidth="109.0" text="C2" />
+         <TableColumn prefWidth="146.0" text="C2" />
+         <TableColumn prefWidth="166.0" text="C2" />
+     </columns>
+   </TableView>
+
+</AnchorPane>

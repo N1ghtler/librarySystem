@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="547.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewMembersController">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewMembersController">
     <children>
         <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
@@ -14,7 +14,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false"  text="Add Member" />
                         <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
                     </items>
                 </Menu>
