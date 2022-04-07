@@ -33,11 +33,12 @@
     </MenuBar>
    <TableView layoutX="20.0" layoutY="42.0" prefHeight="527.0" prefWidth="902.0">
      <columns>
-       <TableColumn prefWidth="123.0" text="C1" />
-       <TableColumn prefWidth="154.0" text="C2" />
-         <TableColumn prefWidth="109.0" text="C2" />
-         <TableColumn prefWidth="146.0" text="C2" />
-         <TableColumn prefWidth="166.0" text="C2" />
+       <TableColumn prefWidth="123.0" text="MemberID" />
+       <TableColumn prefWidth="154.0" text="MemberName" />
+         <TableColumn prefWidth="109.0" text="BooksISBN" />
+         <TableColumn prefWidth="146.0" text="BookName" />
+         <TableColumn prefWidth="166.0" text="Date" />
+         <TableColumn prefWidth="166.0" text="Return Date" />
      </columns>
    </TableView>
 
