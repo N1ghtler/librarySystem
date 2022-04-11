@@ -13,9 +13,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ViewMembersController implements Initializable {
@@ -38,6 +40,7 @@ public class ViewMembersController implements Initializable {
 
     ObservableList<ViewMember> data = FXCollections.observableArrayList();
     ArrayList<ViewMember> list = new ArrayList<>();
+
 
     public void addData(){
         list.add(new ViewMember("DDAs","20","M","A221"));
@@ -62,7 +65,7 @@ public class ViewMembersController implements Initializable {
 
     @FXML
     public void viewBook(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource(""));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ViewBook.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

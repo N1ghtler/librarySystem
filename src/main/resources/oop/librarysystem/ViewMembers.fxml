@@ -14,7 +14,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false"  text="Add Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
                         <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
                     </items>
                 </Menu>
@@ -22,6 +22,12 @@
                     <items>
                         <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
                         <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Borrow Books">
+                    <items>
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>
