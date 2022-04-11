@@ -9,10 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,6 +36,11 @@ public class ViewMembersController implements Initializable {
     public TableColumn<ViewMember, String> memberID;
     @FXML
     public TableColumn<ViewMember, String> memberAge;
+    @FXML
+    public TextField InputIDMember;
+    public Button DeleteButton;
+    public Label OUTresulfLable;
+
 
     ObservableList<ViewMember> data = FXCollections.observableArrayList();
     ArrayList<ViewMember> list = new ArrayList<>();
@@ -61,6 +66,8 @@ public class ViewMembersController implements Initializable {
         memberAge.setCellValueFactory(new PropertyValueFactory<ViewMember,String>("Age"));
         addData();
         memberTable.setItems(data);
+
+
     }
 
     @FXML
@@ -72,7 +79,11 @@ public class ViewMembersController implements Initializable {
         stage.show();
     }
 
-    public void deleteData(String ID){
+
+
+    @FXML
+    public void deleteData(ActionEvent event){
+        String ID = InputIDMember.getText();
         Boolean foundIT = false;
         for (int i = 0; i < list.size(); i++) {
             ViewMember tmp = list.get(i);
@@ -85,9 +96,11 @@ public class ViewMembersController implements Initializable {
 
         if (foundIT){
             System.out.println("Deleting");
+            OUTresulfLable.setText("Deleting");
         }
         else {
             System.out.println("NOT FOUND!");
+            OUTresulfLable.setText("NOT FOUND!");
         }
 
     }
