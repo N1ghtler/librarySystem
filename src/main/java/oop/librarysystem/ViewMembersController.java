@@ -13,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -43,6 +42,7 @@ public class ViewMembersController implements Initializable {
 
 
     public void addData(){
+
         list.add(new ViewMember("DDAs","20","M","A221"));
         list.add(new ViewMember("DDAds","210","M","A231"));
         list.add(new ViewMember("DDafAs","202","F","A421"));
@@ -70,5 +70,25 @@ public class ViewMembersController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void deleteData(String ID){
+        Boolean foundIT = false;
+        for (int i = 0; i < list.size(); i++) {
+            ViewMember tmp = list.get(i);
+            if (ID.equalsIgnoreCase(tmp.getID())){
+                System.out.println("Found It");
+                foundIT = true;
+                break;
+            }
+        }
+
+        if (foundIT){
+            System.out.println("Deleting");
+        }
+        else {
+            System.out.println("NOT FOUND!");
+        }
+
     }
 }
