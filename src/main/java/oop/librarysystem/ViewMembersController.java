@@ -36,7 +36,7 @@ public class ViewMembersController implements Initializable {
     public TextField InputIDMember;
     public Button DeleteButton;
     public Label OUTresulfLable;
-    public Parent mainFX;
+    public Parent mainFXMember;
 
 
     ObservableList<ViewMember> data = FXCollections.observableArrayList();
@@ -70,35 +70,35 @@ public class ViewMembersController implements Initializable {
     @FXML
     public void viewBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
-        Stage window = (Stage) mainFX.getScene().getWindow();
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
 
     @FXML
     public void addBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource(""));
-        Stage window = (Stage) mainFX.getScene().getWindow();
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
 
     @FXML
     public void addMember(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Add-member.fxml"));
-        Stage window = (Stage) mainFX.getScene().getWindow();
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
-        Stage window = (Stage) mainFX.getScene().getWindow();
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
 
     @FXML
     public void addBorrowBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("addBorrowBooks.fxml"));
-        Stage window = (Stage) mainFX.getScene().getWindow();
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
     //END SET SCENE

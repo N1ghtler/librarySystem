@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewMembersController"
-            fx:id="mainFX">
+            fx:id="mainFXMember">
     <children>
         <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
@@ -16,20 +16,19 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false"  onAction="#addMember" text="Add Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
                     <items>
-                        <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
+                        <MenuItem id="addBook" mnemonicParsing="false" onAction="#addBook" text="Add Book" />
                         <MenuItem id="viewBook" mnemonicParsing="false" onAction="#viewBook" text="View Book" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Borrow Books">
                     <items>
-                        <MenuItem id="addBorrowBook" mnemonicParsing="false" text="Add Borrow Books" />
-                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" text="View Borrow Books" />
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false"  onAction="#addBorrowBook" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook"  text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>
