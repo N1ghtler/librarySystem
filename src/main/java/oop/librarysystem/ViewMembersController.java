@@ -44,7 +44,6 @@ public class ViewMembersController implements Initializable {
 
 
     public void addData(){
-
         list.add(new ViewMember("DDAs","20","M","A221"));
         list.add(new ViewMember("DDAds","210","M","A231"));
         list.add(new ViewMember("DDafAs","202","F","A421"));
@@ -110,29 +109,23 @@ public class ViewMembersController implements Initializable {
     @FXML
     public void deleteData(ActionEvent event){
         String ID = InputIDMember.getText();
+        ViewMember re = new ViewMember();
         boolean foundIT = false;
         for (ViewMember tmp : list) {
             if (ID.equalsIgnoreCase(tmp.getID())) {
                 System.out.println("Found It");
+                re = tmp;
                 foundIT = true;
                 break;
             }
         }
 
         if (foundIT){
-            System.out.println("Deleting");
-            OUTresulfLable.setText("Deleting");
-            try {
-                wait(2000);
-                OUTresulfLable.setText("Done");
-                wait(5000);
-                OUTresulfLable.setText("");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            list.remove(re);
+            data.remove(re);
+            OUTresulfLable.setText("Done");
         }
         else {
-            System.out.println("NOT FOUND!");
             OUTresulfLable.setText("NOT FOUND!");
         }
 
