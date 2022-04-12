@@ -101,14 +101,18 @@ public class ViewMembersController implements Initializable {
         Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+    @FXML
+    public void quitExit(ActionEvent event) throws IOException {
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
+        window.close();
+    }
     //END SET SCENE
     @FXML
     public void deleteData(ActionEvent event){
         String ID = InputIDMember.getText();
-        Boolean foundIT = false;
-        for (int i = 0; i < list.size(); i++) {
-            ViewMember tmp = list.get(i);
-            if (ID.equalsIgnoreCase(tmp.getID())){
+        boolean foundIT = false;
+        for (ViewMember tmp : list) {
+            if (ID.equalsIgnoreCase(tmp.getID())) {
                 System.out.println("Found It");
                 foundIT = true;
                 break;

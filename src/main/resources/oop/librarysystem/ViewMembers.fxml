@@ -11,7 +11,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Quit" />
+                        <MenuItem mnemonicParsing="false" text="Quit" onAction="#quitExit"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
