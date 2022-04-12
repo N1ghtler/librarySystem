@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 
 public class ViewMembersController implements Initializable {
 
@@ -44,12 +44,18 @@ public class ViewMembersController implements Initializable {
 
 
     public void addData(){
-        list.add(new ViewMember("DDAs","20","M","A221"));
-        list.add(new ViewMember("DDAds","210","M","A231"));
-        list.add(new ViewMember("DDafAs","202","F","A421"));
-        list.add(new ViewMember("DDAdfs","201","F","A521"));
-        list.add(new ViewMember("DDdfAs","210","M","A621"));
-        list.add(new ViewMember("DDadAs","22","M","A71"));
+        try{
+            Connection con=DriverManager.getConnection(
+                    "jdbc:mysql://localhost:8889/librarySystem","root","root");
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from Member");
+            while(rs.next())
+                list.add(new ViewMember(rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(1)));
+            con.close();
+        }catch(Exception e){ System.out.println(e);}
         data.addAll(list);
     }
 
@@ -123,11 +129,21 @@ public class ViewMembersController implements Initializable {
         if (foundIT){
             list.remove(re);
             data.remove(re);
+
+            try{
+                Connection con=DriverManager.getConnection(
+                        "jdbc:mysql://localhost:8889/librarySystem","root","root");
+
+                String query = "delete from Member where MemberID = ?";
+                PreparedStatement preparedStmt = con.prepareStatement(query);
+                preparedStmt.setString(1, ID);
+                preparedStmt.execute();
+                con.close();
+            }catch(Exception e){ System.out.println(e);}
             OUTresulfLable.setText("Done");
         }
         else {
             OUTresulfLable.setText("NOT FOUND!");
         }
-
     }
 }
