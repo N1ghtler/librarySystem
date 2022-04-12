@@ -3,7 +3,7 @@ package oop.librarysystem.DataClass;
 public class Member{
 
     private String Name;
-    private int Age;
+    private String Age;
     private String ID;
     private String gender;
 
@@ -11,13 +11,13 @@ public class Member{
 
     }
 
-    public Member(String Name, int Age , String ID) {
+    public Member(String Name, String Age , String ID) {
         this.Name = Name;
         this.Age = Age;
         this.ID = ID;
     }
 
-    public Member(String Name, int Age, String ID, String gender) {
+    public Member(String Name, String Age, String ID, String gender) {
         this.Name = Name;
         this.Age= Age;
         this.ID = ID;
@@ -28,7 +28,7 @@ public class Member{
         this.Name = name;
     }
 
-    public void setMemberAge(int Age) {
+    public void setMemberAge(String Age) {
         this.Age = Age;
     }
 
@@ -44,7 +44,7 @@ public class Member{
         return Name;
     }
 
-    public int getMemberAge() {
+    public String getMemberAge() {
         return Age;
     }
 
@@ -58,7 +58,7 @@ public class Member{
 
     @Override
     public String toString() {
-        return "Member [Age=" + Age + ", Gender=" + gender + ", ID=" + ID + ", Name=" + Name + "]";
+        return "Member Age=" + Age + ", Gender=" + gender +", ID = "+ID+ ", Name=" + Name ;
     }
 
 }
