@@ -46,7 +46,7 @@ public class ViewMembersController implements Initializable {
     public void addData(){
         try{
             Connection con=DriverManager.getConnection(
-                    "jdbc:mysql://localhost:8889/librarySystem","root","root");
+                    "jdbc:mysql://localhost:3306/librarysystem","root","");
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from Member");
             while(rs.next())
@@ -132,7 +132,7 @@ public class ViewMembersController implements Initializable {
 
             try{
                 Connection con=DriverManager.getConnection(
-                        "jdbc:mysql://localhost:8889/librarySystem","root","root");
+                        "jdbc:mysql://localhost:3306/librarySystem","root","");
 
                 String query = "delete from Member where MemberID = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(query);
