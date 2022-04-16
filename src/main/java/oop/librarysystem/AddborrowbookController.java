@@ -17,9 +17,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddborrowbookController implements Initializable {
-    public TextField MemberID;
-    @FXML
     public TextField BookISBN;
+    @FXML
+    public TextField Member_Name;
     @FXML
     public TextField TodayDate;
     @FXML
@@ -39,11 +39,11 @@ public class AddborrowbookController implements Initializable {
     private void SubmitButton(ActionEvent event) throws SQLException {
         Book[] books = new Book[50];
 
-        if(MemberID.getText().isEmpty()){
-            information.appendText("Field please input MemberID !!!");
-        }
         if(BookISBN.getText().isEmpty()){
             information.appendText("Field please input BookISBN !!!");
+        }
+        if(Member_Name.getText().isEmpty()){
+            information.appendText("Field please input MemmberName !!!");
         }
         if(TodayDate.getText().isEmpty()){
             information.appendText("Field please input TodayDate !!!");
@@ -54,32 +54,27 @@ public class AddborrowbookController implements Initializable {
         }
 
 
-        String MemberIDText = MemberID.getText();
-        String BookISBNText = BookISBN.getText();
+        String MemberIDText = BookISBN.getText();
+        String BookISBNText = Member_Name.getText();
         String  TodayDateText = TodayDate.getText();
         String ReturnDatetext = ReturnDate.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
-            pst = con.prepareStatement("insert into Book(MemberID, BookISBN, TodayDate, ReturnDate)values(?,?,?,?)");
+            pst = con.prepareStatement("insert into Book(BookISBN, Mamber_Name,Date Taken, DateReturn)values(?,?,?,?)");
 
-            pst.setString(1,MemberIDText);
-            pst.setString(3,BookISBNText);
-            pst.setString(2,TodayDateText);
+            pst.setString(2,MemberIDText);
+            pst.setString(1,BookISBNText);
+            pst.setString(3,TodayDateText);
             pst.setString(4,ReturnDatetext);
 
             int status = pst.executeUpdate();
             if(status==1){
-                if(MemberID.getText() .equals("123") || MemberID.getText().equals("456")){
                     AddborrowbookController.JOptionPane.showMessageDialog(null,"Record add");
-                    MemberID.setText("");
+                    Member_Name.setText("");
                     BookISBN.setText("");
                     TodayDate.setText("");
                     ReturnDate.setText("");
-                }
-                else {
-                    information.appendText("Wrong input please input MemberID  again:");
-                }
 
             }else {
                 AddBookController.JOptionPane.showMessageDialog(null,"Record Filed");
