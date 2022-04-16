@@ -4,25 +4,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.AddmemberController">
+<AnchorPane fx:id="addmember"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.AddmemberController">
     <children>
-        <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+        <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Quit" />
+                        <MenuItem mnemonicParsing="false" text="Quit" onAction="#quitExit"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false"  onAction="#addMember" text="Add Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
                     <items>
-                        <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                        <MenuItem id="addBook" mnemonicParsing="false" onAction="#addBook" text="Add Book" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" onAction="#viewBook" text="View Book" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Borrow Books">
+                    <items>
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false"  onAction="#addBorrowBook" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook"  text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>
@@ -45,8 +50,8 @@
             <Button fx:id="Save_B" layoutX="475.0" layoutY="302.0" mnemonicParsing="false" onAction="#Savebutton" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="#fffefe" />
             <Button fx:id="Cancel_B" layoutX="612.0" layoutY="302.0" mnemonicParsing="false" onAction="#Cancelbutton" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: red;" text="Cancel" textFill="#260505" />
             <TextField fx:id="Mname" layoutX="303.0" layoutY="38.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enter Name" />
-            <TextField fx:id="Mage" layoutX="303.0" layoutY="98.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enetr ID" />
-            <TextField fx:id="Mid" layoutX="303.0" layoutY="153.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enter Age" />
+            <TextField fx:id="Mid" layoutX="303.0" layoutY="98.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enetr ID" />
+            <TextField fx:id="Mage" layoutX="303.0" layoutY="153.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enter Age" />
             <TextField fx:id="Mgender" layoutX="303.0" layoutY="206.0" prefHeight="38.0" prefWidth="346.0" promptText="Please Enter Gender" />
          </children></Pane>
     </children>

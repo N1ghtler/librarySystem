@@ -13,76 +13,68 @@ import java.util.ResourceBundle;
 
 
 public class AddBookController implements Initializable {
-    public TextField Title;
+    public TextField BTittle;
     @FXML
-    public TextField ISBN;
+    public TextField BIsbn;
     @FXML
-    public TextField Author;
+    public TextField BAuthor;
     @FXML
-    public TextField Publish_year;
-    @FXML
-    private Label welcome;
+    public TextField BPublishyear;
+
     @FXML
     public Button Cancel_B;
     @FXML
     public Button Save_B;
     @FXML
     public TextArea information;
-    //private Executor = exec;
 
-    public Connection con;
-    public PreparedStatement pst;
+    public Connection connect;
+    public PreparedStatement pret;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
+    @FXML
     private void Savebutton(ActionEvent event) throws SQLException {
         Book[] books = new Book[50];
 
-        if(Title.getText().isEmpty()){
+        if(BTittle.getText().isEmpty()){
             information.appendText("Field please input Title !!!");
         }
-        if(ISBN.getText().isEmpty()){
+        if(BIsbn.getText().isEmpty()){
             information.appendText("Field please input ISBN !!!");
         }
-        if(Author.getText().isEmpty()){
+        if(BAuthor.getText().isEmpty()){
             information.appendText("Field please input Author !!!");
         }
-        if(Publish_year.getText().isEmpty())
+        if(BPublishyear.getText().isEmpty())
         {
-            information.appendText("ERROR!! please input Publishyear !!");
+            information.appendText("Field please input Publishyear !!");
         }
 
-
-        String titleText = Title.getText();
-        String isbnText = ISBN.getText();
-        String  Authortext = Author.getText();
-        int publishyeartext = Integer.parseInt(Publish_year.getText());
+        String titleText = BTittle.getText();
+        String isbnText = BIsbn.getText();
+        String  Authortext = BAuthor.getText();
+        int publishyeartext = Integer.parseInt(BPublishyear.getText());
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library system","root","");
-            pst = con.prepareStatement("insert into Book(Title, ISBN, Author, Publish_year)values(?,?,?,?)");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
+            pret = connect.prepareStatement("insert into Book(BookName, BookISBN, BookAuthor, BookYear)values(?,?,?,?)");
 
-            pst.setString(1,titleText);
-            pst.setString(3,isbnText);
-            pst.setString(2,Authortext);
-            pst.setInt(4,publishyeartext);
+            pret.setString(1,titleText);
+            pret.setString(2,isbnText);
+            pret.setString(3,Authortext);
+            pret.setInt(4,publishyeartext);
 
-            int status = pst.executeUpdate();
+            int status = pret.executeUpdate();
             if(status==1){
-                if(Title.getText() .equals("123") || Title.getText().equals("456")){
-                    AddBookController.JOptionPane.showMessageDialog(null,"Record add");
-                    Title.setText("");
-                    ISBN.setText("");
-                    Author.setText("");
-                    Publish_year.setText("");
-                }
-                else {
-                    information.appendText("Wrong input please input Title  again:");
-                }
-
+                AddBookController.JOptionPane.showMessageDialog(null,"Record add");
+                BTittle.setText("");
+                BIsbn.setText("");
+                BAuthor.setText("");
+                BPublishyear.setText("");
             }else {
                 AddBookController.JOptionPane.showMessageDialog(null,"Record Filed");
 
@@ -95,10 +87,10 @@ public class AddBookController implements Initializable {
 
     @FXML
     private void Cancelbutton(ActionEvent event){
-        Title.setText("");
-        ISBN.setText(null);
-        Author.setText(null);
-        Publish_year.setText(null);
+        BTittle.setText("");
+        BIsbn.setText(null);
+        BAuthor.setText(null);
+        BPublishyear.setText(null);
     }
 
 

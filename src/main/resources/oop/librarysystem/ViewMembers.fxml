@@ -17,6 +17,7 @@
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
                         <MenuItem id="addMember" mnemonicParsing="false"  onAction="#addMember" text="Add Member" />
+                        <MenuItem id="viewMember" mnemonicParsing="false"  onAction="#viewMembers" text="Add Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
