@@ -9,7 +9,7 @@ module oop.librarysystem {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
-    requires mysql.connector.java;
+//    requires mysql.connector.java;
 
     opens oop.librarysystem to javafx.fxml;
     exports oop.librarysystem;

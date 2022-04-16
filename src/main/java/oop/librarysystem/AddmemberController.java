@@ -117,7 +117,7 @@ public class AddmemberController implements Initializable {
     }
 
 
-    private static class JOptionPane {
+    static class JOptionPane {
 
         public static void showMessageDialog(Object o, String record_add) {
 
