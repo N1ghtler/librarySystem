@@ -2,13 +2,19 @@ package oop.librarysystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import oop.librarysystem.DataClass.AddborrowBook;
 import oop.librarysystem.DataClass.Book;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +23,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddborrowbookController implements Initializable {
+    @FXML
     public TextField BookISBN;
     @FXML
     public TextField Member_Name;
@@ -30,14 +37,16 @@ public class AddborrowbookController implements Initializable {
     public Button Submit_B;
     @FXML
     public TextArea information;
+    public Parent Addborrowbook;
 
     public Connection con;
     public PreparedStatement pst;
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    private void SubmitButton(ActionEvent event) throws SQLException {
-        Book[] books = new Book[50];
+    @FXML
+    public void Submit(ActionEvent event) throws SQLException {
+        AddborrowBook[] addborrowBooksbooks = new AddborrowBook[50];
 
         if(BookISBN.getText().isEmpty()){
             information.appendText("Field please input BookISBN !!!");
@@ -54,14 +63,14 @@ public class AddborrowbookController implements Initializable {
         }
 
 
-        String MemberIDText = BookISBN.getText();
-        String BookISBNText = Member_Name.getText();
+        String BookISBNText = BookISBN.getText();
+        String MemberIDText = Member_Name.getText();
         String  TodayDateText = TodayDate.getText();
         String ReturnDatetext = ReturnDate.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
-            pst = con.prepareStatement("insert into Book(BookISBN, Mamber_Name,Date Taken, DateReturn)values(?,?,?,?)");
+            pst = con.prepareStatement("insert into borrowbooks(BookISBN, Mamber_Name,DateTaken, DateReturn) values (?,?,?,?)");
 
             pst.setString(2,MemberIDText);
             pst.setString(1,BookISBNText);
@@ -93,6 +102,51 @@ public class AddborrowbookController implements Initializable {
         public static void showMessageDialog(Object o, String record_add) {
 
         }
+    }
+    @FXML
+    public void viewBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Add-Book.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addMember(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Add-member.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void viewBorrowBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addBorrowBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("addBorrowBooks.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void Member(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void quitExit(ActionEvent event) throws IOException {
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.close();
     }
 }
 
