@@ -66,7 +66,7 @@ public class ViewBookController implements Initializable {
             db.close();
             tableview.setItems(observableList);
         } catch (SQLException e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }

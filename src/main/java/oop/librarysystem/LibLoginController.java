@@ -54,7 +54,7 @@ public class LibLoginController implements Initializable {
             }
             dbConnect.close();
         } catch (SQLException e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
         if (tf_username.getText().isEmpty() || pf_password.getText().isEmpty()){

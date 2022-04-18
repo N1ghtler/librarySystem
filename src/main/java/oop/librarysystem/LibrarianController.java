@@ -158,7 +158,7 @@ public class LibrarianController implements Initializable {
             tableview.setItems(list);
             searchLibrarian();
         } catch (SQLException e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }
@@ -210,7 +210,7 @@ public class LibrarianController implements Initializable {
             }
             db.close();
         } catch (Exception e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }
@@ -237,7 +237,7 @@ public class LibrarianController implements Initializable {
             }
             db.close();
         } catch (Exception e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }
@@ -258,7 +258,7 @@ public class LibrarianController implements Initializable {
             }
             db.close();
         } catch (SQLException e) {
-            Logger.getLogger(HelloController.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(HelloApplication.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }
