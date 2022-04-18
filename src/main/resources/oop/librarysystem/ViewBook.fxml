@@ -2,31 +2,39 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:controller="oop.librarysystem.ViewBookController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane fx:id="viewBook" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewBookController">
    <children>
-      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+      <MenuBar prefHeight="23.0" prefWidth="464.0">
          <menus>
             <Menu mnemonicParsing="false" text="Files">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Quit" />
+                  <MenuItem mnemonicParsing="false" onAction="#librarian" text="About Librarian" />
+                  <MenuItem mnemonicParsing="false" onAction="#quitExit" text="Quit" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Member">
                <items>
-                  <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
-                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                  <MenuItem id="addMember" mnemonicParsing="false" onAction="#addMember" text="Add Member" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" onAction="#Member" text="View Member" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Book">
                <items>
-                  <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
-                  <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                  <MenuItem id="addBook" mnemonicParsing="false" onAction="#addBook" text="Add Book" />
+                  <MenuItem id="viewBook" mnemonicParsing="false" onAction="#viewBook" text="View Book" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Borrow Books">
+               <items>
+                  <MenuItem id="addBorrowBook" mnemonicParsing="false" onAction="#addBorrowBook" text="Add Borrow Books" />
+                  <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook" text="View Borrow Books" />
                </items>
             </Menu>
          </menus>
       </MenuBar>
-      <TableView fx:id="tableview" layoutX="39.0" layoutY="43.0" prefHeight="314.0" prefWidth="526.0">
+      <TableView fx:id="tableview" layoutX="39.0" layoutY="105.0" prefHeight="471.0" prefWidth="918.0">
          <columns>
             <TableColumn fx:id="colTitle" prefWidth="75.0" text="Title" />
             <TableColumn fx:id="colAuthor" prefWidth="75.0" text="Author" />
@@ -37,5 +45,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Label layoutX="380.0" layoutY="51.0" prefHeight="45.0" prefWidth="168.0" text="Book Information" textFill="#0ff500">
+         <font>
+            <Font name="Comic Sans MS Italic" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
