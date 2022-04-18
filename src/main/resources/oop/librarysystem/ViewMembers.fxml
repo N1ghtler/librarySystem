@@ -3,39 +3,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="oop.librarysystem.ViewMembersController"
-            >
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewMembersController"
+            fx:id="mainFXMember">
     <children>
         <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Quit" />
+                        <MenuItem mnemonicParsing="false" text="Quit" onAction="#quitExit"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false"  onAction="#addMember" text="Add Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
                     <items>
-                        <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
-                        <MenuItem id="viewBook" onAction="#viewBook" mnemonicParsing="false" text="View Book" />
+                        <MenuItem id="addBook" mnemonicParsing="false" onAction="#addBook" text="Add Book" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" onAction="#viewBook" text="View Book" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Borrow Books">
                     <items>
-                        <MenuItem id="addBorrowBook" mnemonicParsing="false" text="Add Borrow Books" />
-                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" text="View Borrow Books" />
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false"  onAction="#addBorrowBook" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook"  text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <TableView fx:id="memberTable" layoutY="28.0" prefHeight="560.0" prefWidth="970.0">
+        <TableView fx:id="memberTable" layoutY="28.0" prefHeight="560.0" prefWidth="782.0">
             <columns>
                 <TableColumn fx:id="memberName" prefWidth="301.0" text="Name" />
                 <TableColumn fx:id="memberAge" minWidth="0.0" prefWidth="198.0" text="Age" />
@@ -43,5 +41,13 @@
                 <TableColumn fx:id="memberID" prefWidth="129.0" text="ID" />
             </columns>
         </TableView>
+      <VBox layoutX="801.0" layoutY="28.0" prefHeight="200.0" prefWidth="186.0">
+         <children>
+            <Label prefHeight="35.0" prefWidth="186.0" text="Enter ID to Delete" />
+            <TextField fx:id="InputIDMember" />
+            <Button fx:id="DeleteButton" mnemonicParsing="false" text="Delete" onAction="#deleteData" />
+            <Label fx:id="OUTresulfLable" prefHeight="36.0" prefWidth="193.0" />
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

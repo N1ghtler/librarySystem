@@ -9,9 +9,9 @@ public class MemberApp {
         Member member =new Member();
 
         member.setMemberName("Molyza");
-        member.setMemberID("1234");
+        //member.setMemberID(1234);
         member.setMemberGender("Female");
-        member.setMemberAge(19);
+        member.setMemberAge("19");
         System.out.print(member.toString());
 
     }

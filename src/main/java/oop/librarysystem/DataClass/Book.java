@@ -1,53 +1,56 @@
 package oop.librarysystem.DataClass;
 
 public class Book {
-     private String Tile,Type,Author,Year;
+     private String title, ISBN,author,year;
 
      public Book() {
      }
 
-     public Book(String tile, String type, String author, String year) {
-          Tile = tile;
-          Type = type;
-          Author = author;
-          Year = year;
+     public Book(String title, String ISBN, String author, String year) {
+          this.title = title;
+          this.ISBN = ISBN;
+          this.author = author;
+          this.year = year;
      }
 
-     public String getTile() {
-          return Tile;
+     public String getTitle() {
+          return title;
      }
 
-     public void setTile(String tile) {
-          Tile = tile;
+     public void setTitle(String title) {
+          this.title = title;
      }
 
-     public String getType() {
-          return Type;
+     public String getISBN() {
+          return ISBN;
      }
 
-     public void setType(String type) {
-          Type = type;
+     public void setISBN(String ISBN) {
+          this.ISBN = ISBN;
      }
 
      public String getAuthor() {
-          return Author;
+          return author;
      }
 
      public void setAuthor(String author) {
-          Author = author;
+          this.author = author;
      }
 
      public String getYear() {
-          return Year;
+          return year;
      }
 
      public void setYear(String year) {
-          Year = year;
+          this.year = year;
      }
 
      @Override
      public String toString() {
-          return "Book [Author=" + Author + ", Tile=" + Tile + ", Type=" + Type + ", Year=" + Year + "]";
+          return "Book [Author=" + getAuthor() +
+                  ", Tile=" + getTitle() +
+                  ", Type=" + getISBN() +
+                  ", Year=" + getYear() + "]";
      }
      
 }
