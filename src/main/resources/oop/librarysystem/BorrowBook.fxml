@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewBorrowbookController">
+<AnchorPane fx:id="ViewBorrowBook" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.ViewBorrowbookController">
     <MenuBar prefHeight="23.0" prefWidth="464.0">
         <menus>
             <Menu mnemonicParsing="false" text="Files">
@@ -31,15 +31,21 @@
             </Menu>
         </menus>
     </MenuBar>
-    <TableView layoutX="20.0" layoutY="42.0" prefHeight="527.0" prefWidth="902.0">
+    <TableView fx:id="tableview" layoutX="215.0" layoutY="46.0" prefHeight="527.0" prefWidth="554.0" style="-fx-background-color: lightgreen;">
         <columns>
-            <TableColumn prefWidth="123.0" text="MemberID" />
-            <TableColumn prefWidth="154.0" text="MemberName" />
-            <TableColumn prefWidth="109.0" text="BooksISBN" />
-            <TableColumn prefWidth="146.0" text="BookName" />
-            <TableColumn prefWidth="166.0" text="Date" />
-            <TableColumn prefWidth="166.0" text="Return Date" />
+            <TableColumn fx:id="colMname" prefWidth="110.80001831054688" text="Member_Name" />
+            <TableColumn fx:id="colBIsbn" prefWidth="122.80001831054688" text="Book_Isbn" />
+            <TableColumn fx:id="colDate" prefWidth="166.0" text="Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="166.0" text="ReturnDate" />
         </columns>
     </TableView>
+   <Pane layoutX="786.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="DeleteButton" layoutX="134.0" layoutY="99.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="57.0" text="Deleted" />
+         <TextField fx:id="InputBISBN" layoutX="26.0" layoutY="56.0" prefHeight="37.0" prefWidth="149.0" />
+         <Label layoutX="26.0" layoutY="15.0" prefHeight="37.0" prefWidth="149.0" text="Input Book_ISBN for deleted" />
+         <Label fx:id="OUTresulfLable" layoutX="26.0" layoutY="136.0" prefHeight="52.0" prefWidth="149.0" />
+      </children>
+   </Pane>
 
 </AnchorPane>
