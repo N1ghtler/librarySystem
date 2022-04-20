@@ -68,10 +68,9 @@ public class ViewBorrowbookController implements Initializable {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(retrieveData);
             while (rs.next()) {
-                observableList.add(new ViewBorrowbook(rs.getString(2), rs.getString(1), rs.getString(3), rs.getString(4)));
+                list.add(new ViewBorrowbook(rs.getString(2), rs.getString(1), rs.getString(3), rs.getString(4)));
                 System.out.println(rs.getString("BookISBN")+"\t"+rs.getString("Mamber_Name")+"\t"+rs.getString("DateTaken")+"\t"+rs.getString("DateReturn"));
             }
-            tableview.setItems(observableList);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } observableList.addAll(list);
