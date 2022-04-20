@@ -41,7 +41,7 @@
     </TableView>
    <Pane layoutX="786.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0">
       <children>
-         <Button fx:id="DeleteButton" layoutX="134.0" layoutY="99.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="57.0" text="Deleted" />
+         <Button fx:id="DeleteButton" layoutX="134.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="14.0" prefWidth="57.0" text="Deleted" />
          <TextField fx:id="InputBISBN" layoutX="26.0" layoutY="56.0" prefHeight="37.0" prefWidth="149.0" />
          <Label layoutX="26.0" layoutY="15.0" prefHeight="37.0" prefWidth="149.0" text="Input Book_ISBN for deleted" />
          <Label fx:id="OUTresulfLable" layoutX="26.0" layoutY="136.0" prefHeight="52.0" prefWidth="149.0" />
