@@ -196,9 +196,9 @@ public class ViewBorrowbookController implements Initializable {
                 Connection con=DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/librarysystem","root","root");
 
-                String query = "delete from borrowbooks where borrowbook_isbn = ?";
+                String query = "delete from borrowbooks where BookISBN = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(query);
-                preparedStmt.setString(2, BISBN);
+                preparedStmt.setString(1, BISBN);
                 preparedStmt.execute();
                 con.close();
             }catch(Exception e){ System.out.println(e);}
