@@ -48,7 +48,7 @@ public class ViewMembersController implements Initializable {
             Connection con=DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/librarysystem","root","");
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from Member");
+            ResultSet rs=stmt.executeQuery("select * from member");
             while(rs.next())
                 list.add(new ViewMember(rs.getString(2),
                         rs.getString(3),
@@ -81,7 +81,7 @@ public class ViewMembersController implements Initializable {
 
     @FXML
     public void addBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("Add-Book.fxml"));
         Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -103,6 +103,18 @@ public class ViewMembersController implements Initializable {
     @FXML
     public void addBorrowBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("addBorrowBooks.fxml"));
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void Member(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+        Stage window = (Stage) mainFXMember.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void librarian(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LibrarianScene.fxml"));
         Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -134,7 +146,7 @@ public class ViewMembersController implements Initializable {
                 Connection con=DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/librarySystem","root","");
 
-                String query = "delete from Member where MemberID = ?";
+                String query = "delete from member where MemberID = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(query);
                 preparedStmt.setString(1, ID);
                 preparedStmt.execute();
