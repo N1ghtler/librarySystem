@@ -74,7 +74,7 @@ public class AddmemberController implements Initializable {
         String empgender = Mgender.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","root");
             pst = con.prepareStatement("insert into member(MemberID, MemberName, MemberAge, MemberGender)values(?,?,?,?)");
 
             pst.setString(2,empname);
@@ -127,6 +127,7 @@ public class AddmemberController implements Initializable {
 
     private class FXMLDocumentController {
     }
+    //SET SCENE
     @FXML
     public void viewBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
@@ -136,7 +137,7 @@ public class AddmemberController implements Initializable {
 
     @FXML
     public void addBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("Add-Book.fxml"));
         Stage window = (Stage) addmember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -150,7 +151,7 @@ public class AddmemberController implements Initializable {
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
         Stage window = (Stage) addmember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -162,9 +163,22 @@ public class AddmemberController implements Initializable {
         window.setScene(new Scene(root));
     }
     @FXML
+    public void Member(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+        Stage window = (Stage) addmember.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void librarian(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LibrarianScene.fxml"));
+        Stage window = (Stage) addmember.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
     public void quitExit(ActionEvent event) throws IOException {
         Stage window = (Stage) addmember.getScene().getWindow();
         window.close();
     }
+    //END SET SCENE
 }
 

@@ -69,7 +69,7 @@ public class AddborrowbookController implements Initializable {
         String ReturnDatetext = ReturnDate.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","root");
             pst = con.prepareStatement("insert into borrowbooks(BookISBN, Mamber_Name,DateTaken, DateReturn) values (?,?,?,?)");
 
             pst.setString(2,MemberIDText);
@@ -103,6 +103,7 @@ public class AddborrowbookController implements Initializable {
 
         }
     }
+    //SET SCENE
     @FXML
     public void viewBook(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
@@ -126,7 +127,7 @@ public class AddborrowbookController implements Initializable {
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
         Stage window = (Stage) Addborrowbook.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -144,9 +145,16 @@ public class AddborrowbookController implements Initializable {
         window.setScene(new Scene(root));
     }
     @FXML
+    public void librarian(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LibrarianScene.fxml"));
+        Stage window = (Stage) Addborrowbook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
     public void quitExit(ActionEvent event) throws IOException {
         Stage window = (Stage) Addborrowbook.getScene().getWindow();
         window.close();
     }
+    //END SET SCENE
 }
 

@@ -62,7 +62,7 @@ public class ViewBorrowbookController implements Initializable {
     private void displayBook() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem", "root", "root");
             String retrieveData = "Select * from borrowbooks";
 
             Statement st = con.createStatement();
@@ -78,10 +78,9 @@ public class ViewBorrowbookController implements Initializable {
 
     }
     //SET SCENE
-
     @FXML
-    public void Member(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+    public void viewBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
         Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -102,7 +101,7 @@ public class ViewBorrowbookController implements Initializable {
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ViewBorrowbook.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
         Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -114,17 +113,23 @@ public class ViewBorrowbookController implements Initializable {
         window.setScene(new Scene(root));
     }
     @FXML
+    public void Member(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+        Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void librarian(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LibrarianScene.fxml"));
+        Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
     public void quitExit(ActionEvent event) throws IOException {
         Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
         window.close();
     }
-    @FXML
-    public void viewBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
-        Stage window = (Stage) ViewBorrowBook.getScene().getWindow();
-        window.setScene(new Scene(root));
-
-    }
+    //END SET SCENE
 
 
     public class ViewBorrowbook {
@@ -190,7 +195,7 @@ public class ViewBorrowbookController implements Initializable {
 
             try{
                 Connection con=DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/librarysystem","root","");
+                        "jdbc:mysql://localhost:3306/librarysystem","root","root");
 
                 String query = "delete from borrowbooks where borrowbook_isbn = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(query);

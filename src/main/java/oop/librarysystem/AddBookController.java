@@ -1,9 +1,15 @@
 package oop.librarysystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import oop.librarysystem.DataClass.Book;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,6 +33,7 @@ public class AddBookController implements Initializable {
     public Button Save_B;
     @FXML
     public TextArea information;
+    public Parent addmbooks;
 
     public Connection connect;
     public PreparedStatement pret;
@@ -60,7 +67,7 @@ public class AddBookController implements Initializable {
         int publishyeartext = Integer.parseInt(BPublishyear.getText());
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarysystem","root","root");
             pret = connect.prepareStatement("insert into Book(BookName, BookISBN, BookAuthor, BookYear)values(?,?,?,?)");
 
             pret.setString(1,titleText);
@@ -100,6 +107,59 @@ static class JOptionPane {
 
     }
 }
+    //SET SCENE
+    @FXML
+    public void viewBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewBook.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Add-Book.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addMember(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Add-member.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void viewBorrowBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+
+    @FXML
+    public void addBorrowBook(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("addBorrowBooks.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void Member(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ViewMembers.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void librarian(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LibrarianScene.fxml"));
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.setScene(new Scene(root));
+    }
+    @FXML
+    public void quitExit(ActionEvent event) throws IOException {
+        Stage window = (Stage) addmbooks.getScene().getWindow();
+        window.close();
+    }
+    //END SET SCENE
 }
 
 

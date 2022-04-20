@@ -305,7 +305,7 @@ public class LibrarianController implements Initializable {
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
         Stage window = (Stage) libScene.getScene().getWindow();
         window.setScene(new Scene(root));
     }

@@ -46,7 +46,7 @@ public class ViewMembersController implements Initializable {
     public void addData(){
         try{
             Connection con=DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/librarysystem","root","");
+                    "jdbc:mysql://localhost:3306/librarysystem","root","root");
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from member");
             while(rs.next())
@@ -95,7 +95,7 @@ public class ViewMembersController implements Initializable {
 
     @FXML
     public void viewBorrowBook(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("BorrowBooks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("BorrowBook.fxml"));
         Stage window = (Stage) mainFXMember.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -144,7 +144,7 @@ public class ViewMembersController implements Initializable {
 
             try{
                 Connection con=DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/librarySystem","root","");
+                        "jdbc:mysql://localhost:3306/librarySystem","root","root");
 
                 String query = "delete from member where MemberID = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(query);

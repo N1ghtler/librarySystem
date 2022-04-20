@@ -10,12 +10,14 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Quit" onAction="#quitExit"/>
+                        <MenuItem mnemonicParsing="false" onAction="#librarian"  text="About Librarian" />
+                        <MenuItem mnemonicParsing="false" onAction="#quitExit" text="Quit" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false"  onAction="#addMember" text="Add Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false" onAction="#addMember" text="Add Member" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" onAction="#Member" text="View Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
@@ -26,8 +28,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Borrow Books">
                     <items>
-                        <MenuItem id="addBorrowBook" mnemonicParsing="false"  onAction="#addBorrowBook" text="Add Borrow Books" />
-                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook"  text="View Borrow Books" />
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false" onAction="#addBorrowBook" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook" text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>

@@ -4,25 +4,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.AddBookController">
+<AnchorPane fx:id="addmbooks"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.librarysystem.AddBookController">
     <children>
-        <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="464.0">
+        <MenuBar prefHeight="23.0" prefWidth="464.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Files">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Quit" />
+                        <MenuItem mnemonicParsing="false" onAction="#librarian"  text="About Librarian" />
+                        <MenuItem mnemonicParsing="false" onAction="#quitExit" text="Quit" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                     <items>
-                        <MenuItem id="addMember" mnemonicParsing="false" text="Add Member" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Member" />
+                        <MenuItem id="addMember" mnemonicParsing="false" onAction="#addMember" text="Add Member" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" onAction="#Member" text="View Member" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Book">
                     <items>
-                        <MenuItem id="addBook" mnemonicParsing="false" text="Add Book" />
-                        <MenuItem id="viewBook" mnemonicParsing="false" text="View Book" />
+                        <MenuItem id="addBook" mnemonicParsing="false" onAction="#addBook" text="Add Book" />
+                        <MenuItem id="viewBook" mnemonicParsing="false" onAction="#viewBook" text="View Book" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Borrow Books">
+                    <items>
+                        <MenuItem id="addBorrowBook" mnemonicParsing="false" onAction="#addBorrowBook" text="Add Borrow Books" />
+                        <MenuItem id="viewBorrowBook" mnemonicParsing="false" onAction="#viewBorrowBook" text="View Borrow Books" />
                     </items>
                 </Menu>
             </menus>
